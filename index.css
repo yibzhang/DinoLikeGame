@@ -1,0 +1,64 @@
+.frame {
+  height: 200px;
+  width: 500px;
+  border-style: solid;
+  border-width: 1px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.start {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.start:hover{
+  background-color: gray;
+  cursor: pointer;
+}
+
+.player {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  position: relative;
+  top: 150px;
+  left: 50px;
+  /* animation: player_jump 1s linear; */
+}
+
+.enermy {
+  height: 25px;
+  width: 10px;
+  background-color: grey;
+  position: relative;
+  top: 125px;
+  float: right;
+  right: 0px;
+}
+
+.player_jump {
+  animation: player_jump_animation 1s linear;
+}
+
+@keyframes player_jump_animation {
+  0% {
+    top: 150px;
+  }
+  25% {
+    top: 125px;
+    transform: rotate(-10deg);
+  }
+  50% {
+    top: 100px;
+    transform: rotate(0deg);
+  }
+  75% {
+    top: 125px;
+    transform: rotate(10deg);
+  }
+  100% {
+    top: 150px;
+  }
+}
