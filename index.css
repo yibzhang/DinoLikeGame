@@ -62,3 +62,9 @@
     top: 150px;
   }
 }
+
+#score{
+  position: relative;
+  top: -40px;
+  left: 20px;
+}

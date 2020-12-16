@@ -2,8 +2,12 @@ var start_game = document.getElementById("start");
 var frame = document.getElementById("frame");
 var player = document.getElementById("player");
 var enermy = document.getElementById("enermy");
+var score_display= document.getElementById("score")
+
+score_display.innerHTML = "score : 0"
 
 var enermy_move_speed = 1;
+var score=0;
 
 function player_jump() {
   // Add player_jump class if it doesn't exist
@@ -37,6 +41,7 @@ function reset_enermy() {
 
 function game_start() {
   reset_enermy();
+  reset_score();
   start_game.style.display = "none";
   frame.addEventListener("click", player_jump, true);
 
@@ -60,9 +65,21 @@ function game_start() {
       ) {
         reset_enermy();
         pos = 0;
+        // add 1 score
+        add_score()
       }
     }
   }
+}
+
+function add_score(){
+  score++;
+  score_display.innerHTML = "score : " + score;
+}
+
+function reset_score(){
+  score=0;
+  score_display.innerHTML = "score : " + score;
 }
 
 function game_over() {
