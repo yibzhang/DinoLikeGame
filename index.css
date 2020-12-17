@@ -1,10 +1,21 @@
+:root{
+  --frame_height: 200px;
+  --frame_width: 500px;
+  --player_height: 50px;
+  --player_width: 50px;
+  --player_jump_height: calc(var(--enermy_height) + 30px);
+  --enermy_height: 40px;
+  --enermy_width: 20px;
+}
+
 .frame {
-  height: 200px;
-  width: 500px;
+  height: var(--frame_height);
+  width: var(--frame_width);
   border-style: solid;
   border-width: 1px;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .start {
@@ -18,24 +29,45 @@
   cursor: pointer;
 }
 
+.score{
+  position: absolute;
+  top: 0px;
+  left: 10px;
+}
+
 .player {
-  height: 50px;
-  width: 50px;
-  background-color: black;
-  position: relative;
-  top: 150px;
+  height: var(--player_height);
+  width: var(--player_width);
+  background-image: url('./player_ma.png');
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
   left: 50px;
-  /* animation: player_jump 1s linear; */
 }
 
 .enermy {
-  height: 25px;
-  width: 10px;
-  background-color: grey;
-  position: relative;
-  top: 125px;
+  height: var(--enermy_height);
+  width: var(--enermy_width);
+  background-image: url('./bamboo.png');
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
   float: right;
   right: 0px;
+}
+
+.enermy_move{
+  animation: enermy_move_animation 3s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes enermy_move_animation {
+  0%{
+    right: 0px;
+  }
+  100%{
+    right: calc(var(--frame_width) - var(--enermy_width));
+  }
 }
 
 .player_jump {
@@ -44,27 +76,22 @@
 
 @keyframes player_jump_animation {
   0% {
-    top: 150px;
+    bottom: 0;
   }
-  25% {
-    top: 125px;
+  15% {
+    bottom: calc(var(--player_jump_height)/2);
     transform: rotate(-10deg);
   }
   50% {
-    top: 100px;
+    bottom: var(--player_jump_height);
     transform: rotate(0deg);
   }
-  75% {
-    top: 125px;
+  85% {
+    bottom: calc(var(--player_jump_height)/2);
     transform: rotate(10deg);
   }
   100% {
-    top: 150px;
+    bottom: 0;
   }
 }
 
-#score{
-  position: relative;
-  top: -40px;
-  left: 20px;
-}

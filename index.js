@@ -2,12 +2,10 @@ var start_game = document.getElementById("start");
 var frame = document.getElementById("frame");
 var player = document.getElementById("player");
 var enermy = document.getElementById("enermy");
-var score_display= document.getElementById("score")
+var score_display = document.getElementById("score")
 
-score_display.innerHTML = "score : 0"
-
-var enermy_move_speed = 1;
-var score=0;
+var game_update_rate = 100;
+var score = 0;
 
 function player_jump() {
   // Add player_jump class if it doesn't exist
@@ -35,56 +33,65 @@ function collision_detection() {
   );
 }
 
-function reset_enermy() {
-  enermy.style.right = "0px";
+function enermy_passed_player() {
+  var enermy_right = parseInt(enermy.getBoundingClientRect().right);
+  var player_left = parseInt(player.getBoundingClientRect().left);
+  return (enermy_right < player_left);
 }
 
-function game_start() {
-  reset_enermy();
-  reset_score();
-  start_game.style.display = "none";
-  frame.addEventListener("click", player_jump, true);
+function enermy_move() {
+  enermy.classList.add("enermy_move")
+}
 
-  // move enermy
-  var pos = 0;
-  var enermy_move_interval = setInterval(enermy_move, enermy_move_speed);
+function enermy_stop() {
+  var offset = getComputedStyle(enermy).right;
+  enermy.style.right = offset;
+  enermy.classList.remove("enermy_move")
+}
 
-  // function to move enermy
-  function enermy_move() {
-    if (collision_detection()) {
-      // game over
-      game_over();
-      clearInterval(enermy_move_interval);
-    } else {
-      pos++;
-      enermy.style.right = pos + "px";
-      // if enermy out of frame then reset
-      if (
-        parseInt(enermy.getBoundingClientRect().left) <=
-        parseInt(frame.getBoundingClientRect().left)
-      ) {
-        reset_enermy();
-        pos = 0;
-        // add 1 score
-        add_score()
-      }
-    }
+function enermy_reset() {
+  enermy.style.right = "0px";
+  if (enermy.classList.contains('enermy_move')) {
+    enermy.classList.remove('enermy_move')
   }
 }
 
-function add_score(){
+function add_score() {
   score++;
   score_display.innerHTML = "score : " + score;
 }
 
-function reset_score(){
-  score=0;
+function reset_score() {
+  score = 0;
   score_display.innerHTML = "score : " + score;
 }
 
 function game_over() {
   start_game.style.display = "block";
   frame.removeEventListener("click", player_jump, true);
+  enermy_stop()
+}
+
+function game_start() {
+  enermy_reset()
+  reset_score()
+  start_game.style.display = 'none'
+  frame.addEventListener('click', player_jump, true)
+
+  enermy_move()
+
+  score_added = false;
+
+  game_update_interval = setInterval(game_update, game_update_rate)
+  function game_update() {
+    if (collision_detection()) {
+      game_over()
+      clearInterval(game_update_interval);
+    } else {
+      if (enermy_passed_player() && !score_added) { add_score(); score_added = true }
+      if (!enermy_passed_player() && score_added) { score_added = false }
+    }
+  }
 }
 
 start_game.addEventListener("click", game_start);
