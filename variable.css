@@ -1,0 +1,9 @@
+:root{
+    --frame_height: 200px;
+    --frame_width: 500px;
+    --player_height: 50px;
+    --player_width: 50px;
+    --player_jump_height: calc(var(--enermy_height) + 30px);
+    --enermy_height: 40px;
+    --enermy_width: 20px;
+  }

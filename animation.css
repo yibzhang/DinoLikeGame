@@ -1,0 +1,67 @@
+@import "variable.css";
+
+@keyframes enermy_move_animation {
+  0% {
+    right: 0px;
+  }
+  100% {
+    right: calc(var(--frame_width) - var(--enermy_width));
+  }
+}
+
+@keyframes player_jump_animation {
+  0% {
+    bottom: 0;
+  }
+  15% {
+    bottom: calc(var(--player_jump_height) / 2);
+    transform: rotate(-10deg);
+  }
+  50% {
+    bottom: var(--player_jump_height);
+    transform: rotate(0deg);
+  }
+  85% {
+    bottom: calc(var(--player_jump_height) / 2);
+    transform: rotate(10deg);
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+/* @keyframes player_horse_leg_1_animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes player_horse_leg_2_animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(80deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes player_horse_leg_3_animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+} */

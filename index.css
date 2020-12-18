@@ -1,12 +1,5 @@
-:root{
-  --frame_height: 200px;
-  --frame_width: 500px;
-  --player_height: 50px;
-  --player_width: 50px;
-  --player_jump_height: calc(var(--enermy_height) + 30px);
-  --enermy_height: 40px;
-  --enermy_width: 20px;
-}
+@import "variable.css";
+@import "animation.css";
 
 .frame {
   height: var(--frame_height);
@@ -16,6 +9,7 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  background-color: grey;
 }
 
 .start {
@@ -38,12 +32,65 @@
 .player {
   height: var(--player_height);
   width: var(--player_width);
-  background-image: url('./player_ma.png');
-  background-size: cover;
   position: absolute;
   bottom: 0;
   left: 50px;
+  background-image: url('./player_horse.png');
+  background-size: cover;
 }
+
+/* #player_horse_body{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('./player_horse_body.png');
+  background-size: cover;
+  z-index: 1;
+}
+
+#player_horse_leg_1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('./player_horse_leg_1.png');
+  background-size: cover;
+  z-index: 2;
+  transform-origin: 95% 56%;
+  animation: player_horse_leg_1_animation 1s linear;
+  animation-iteration-count: infinite;
+}
+
+#player_horse_leg_2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('./player_horse_leg_2.png');
+  background-size: cover;
+  z-index: 2;
+  transform-origin: 87% 78%;
+  animation: player_horse_leg_2_animation 1s linear;
+  animation-iteration-count: infinite;
+}
+
+#player_horse_leg_3{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('./player_horse_leg_3.png');
+  background-size: cover;
+  z-index: 2;
+  transform-origin: center;
+  animation: player_horse_leg_3_animation 1s linear;
+  animation-iteration-count: infinite;
+} */
 
 .enermy {
   height: var(--enermy_height);
@@ -61,37 +108,6 @@
   animation-iteration-count: infinite;
 }
 
-@keyframes enermy_move_animation {
-  0%{
-    right: 0px;
-  }
-  100%{
-    right: calc(var(--frame_width) - var(--enermy_width));
-  }
-}
-
 .player_jump {
   animation: player_jump_animation 1s linear;
 }
-
-@keyframes player_jump_animation {
-  0% {
-    bottom: 0;
-  }
-  15% {
-    bottom: calc(var(--player_jump_height)/2);
-    transform: rotate(-10deg);
-  }
-  50% {
-    bottom: var(--player_jump_height);
-    transform: rotate(0deg);
-  }
-  85% {
-    bottom: calc(var(--player_jump_height)/2);
-    transform: rotate(10deg);
-  }
-  100% {
-    bottom: 0;
-  }
-}
-
