@@ -35,7 +35,7 @@
   position: absolute;
   bottom: 0;
   left: 50px;
-  background-image: url('./player_horse.png');
+  background-image: url('./player_horse_static.png');
   background-size: cover;
 }
 

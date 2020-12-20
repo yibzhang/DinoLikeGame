@@ -7,6 +7,14 @@ var score_display = document.getElementById("score")
 var game_update_rate = 100;
 var score = 0;
 
+function player_start_animation(){
+  player.style.backgroundImage = "url('./player_horse_animated.gif')"
+}
+
+function player_stop_animation(){
+  player.style.backgroundImage = "url('./player_horse_static.png')"
+}
+
 function player_jump() {
   // Add player_jump class if it doesn't exist
   if (!player.classList.contains("player_jump")) {
@@ -70,11 +78,13 @@ function game_over() {
   start_game.style.display = "block";
   frame.removeEventListener("click", player_jump, true);
   enermy_stop()
+  player_stop_animation()
 }
 
 function game_start() {
   enermy_reset()
   reset_score()
+  player_start_animation()
   start_game.style.display = 'none'
   frame.addEventListener('click', player_jump, true)
 
