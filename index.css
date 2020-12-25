@@ -96,8 +96,8 @@
 .enermy {
   height: var(--enermy_height);
   width: var(--enermy_width);
-  background-image: url('./fire.gif');
-  background-size: contain;
+  background-image: url('./arraw.png');
+  background-size: cover;
   position: absolute;
   bottom: 0;
   float: right;
@@ -105,10 +105,10 @@
 }
 
 .enermy_move{
-  animation: enermy_move_animation 3s linear;
+  animation: enermy_move_animation var(--enermy_move_time) linear;
   animation-iteration-count: infinite;
 }
 
 .player_jump {
-  animation: player_jump_animation 1s linear;
+  animation: player_jump_animation var(--player_jump_time) linear;
 }

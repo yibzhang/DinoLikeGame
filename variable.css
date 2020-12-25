@@ -4,6 +4,8 @@
     --player_height: 50px;
     --player_width: 50px;
     --player_jump_height: calc(var(--enermy_height) + 30px);
+    --player_jump_time: 1s;
     --enermy_height: 40px;
     --enermy_width: 20px;
+    --enermy_move_time: 3s;
   }
