@@ -96,8 +96,8 @@
 .enermy {
   height: var(--enermy_height);
   width: var(--enermy_width);
-  background-image: url('./bamboo.png');
-  background-size: cover;
+  background-image: url('./fire.gif');
+  background-size: contain;
   position: absolute;
   bottom: 0;
   float: right;
