@@ -42,9 +42,7 @@ function collision_detection() {
 }
 
 function enermy_passed_player() {
-  var enermy_right = parseInt(enermy.getBoundingClientRect().right);
-  var player_left = parseInt(player.getBoundingClientRect().left);
-  return (enermy_right < player_left);
+  return (parseInt(enermy.getBoundingClientRect().right) < parseInt(player.getBoundingClientRect().left));
 }
 
 function enermy_move() {
@@ -52,8 +50,7 @@ function enermy_move() {
 }
 
 function enermy_stop() {
-  var offset = getComputedStyle(enermy).right;
-  enermy.style.right = offset;
+  enermy.style.right = getComputedStyle(enermy).right
   enermy.classList.remove("enermy_move")
 }
 
