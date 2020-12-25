@@ -1,0 +1,11 @@
+:root{
+    --frame_height: 400px;
+    --frame_width: 1000px;
+    --player_height: 100px;
+    --player_width: 100px;
+    --player_jump_height: calc(var(--enermy_height) + 50px);
+    --player_jump_time: 1s;
+    --enermy_height: 80px;
+    --enermy_width: 40px;
+    --enermy_move_time: 3s;
+  }

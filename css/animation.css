@@ -29,39 +29,3 @@
     bottom: 0;
   }
 }
-
-/* @keyframes player_horse_leg_1_animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(-0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes player_horse_leg_2_animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(80deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes player_horse_leg_3_animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-} */

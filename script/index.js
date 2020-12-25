@@ -8,11 +8,11 @@ var game_update_rate = 100;
 var score = 0;
 
 function player_start_animation(){
-  player.style.backgroundImage = "url('./player_horse_animated.gif')"
+  player.style.backgroundImage = "url('images/player_horse_animated.gif')"
 }
 
 function player_stop_animation(){
-  player.style.backgroundImage = "url('./player_horse_static.png')"
+  player.style.backgroundImage = "url('images/player_horse_static.png')"
 }
 
 function player_jump() {
