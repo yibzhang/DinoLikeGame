@@ -11,6 +11,7 @@
   transform: translateX(-50%);
   background-image: url('../images/frame.png');
   background-size: cover;
+  overflow: hidden;
 }
 
 .start {
@@ -46,16 +47,35 @@
   background-image: url('../images/arraw.png');
   background-size: cover;
   position: absolute;
-  bottom: 0;
   float: right;
-  right: 0px;
+  bottom: 0;
+  right: 0;
 }
 
-.enermy_move{
+.enermy_move {
   animation: enermy_move_animation var(--enermy_move_time) linear;
   animation-iteration-count: infinite;
 }
 
 .player_jump {
   animation: player_jump_animation var(--player_jump_time) linear;
+}
+
+.cloud{
+  height: var(--cloud_height);
+  width: var(--cloud_width);
+  position: absolute;
+  float: right;
+  background-size: contain;
+}
+
+.cloud_move{
+  animation: cloud_move_animation var(--cloud_move_time) linear;
+  animation-iteration-count: infinite;
+}
+
+#cloud1{
+  top: 35%;
+  right: 30%;
+  background-image: url("../images/cloud1.png");
 }

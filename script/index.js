@@ -3,15 +3,15 @@ var frame = document.getElementById("frame");
 var player = document.getElementById("player");
 var enermy = document.getElementById("enermy");
 var score_display = document.getElementById("score")
-
+var cloud1 = document.getElementById("cloud1")
 var game_update_rate = 100;
 var score = 0;
 
-function player_start_animation(){
+function player_start_animation() {
   player.style.backgroundImage = "url('images/player_horse_animated.gif')"
 }
 
-function player_stop_animation(){
+function player_stop_animation() {
   player.style.backgroundImage = "url('images/player_horse_static.png')"
 }
 
@@ -64,6 +64,16 @@ function enermy_reset() {
   }
 }
 
+function background_move() {
+  cloud1.style.right = -cloud1.clientWidth + "px"
+  cloud1.classList.add('cloud_move')
+}
+
+function background_stop() {
+  cloud1.style.right = getComputedStyle(cloud1).right;
+  cloud1.classList.remove('cloud_move')
+}
+
 function add_score() {
   score++;
   score_display.innerHTML = "score : " + score;
@@ -78,6 +88,7 @@ function game_over() {
   start_game.style.display = "block";
   frame.removeEventListener("click", player_jump, true);
   enermy_stop()
+  background_stop()
   player_stop_animation()
 }
 
@@ -89,6 +100,7 @@ function game_start() {
   frame.addEventListener('click', player_jump, true)
 
   enermy_move()
+  background_move()
 
   score_added = false;
 

@@ -5,7 +5,7 @@
     right: 0px;
   }
   100% {
-    right: calc(var(--frame_width) - var(--enermy_width));
+    right: var(--frame_width);
   }
 }
 
@@ -27,5 +27,11 @@
   }
   100% {
     bottom: 0;
+  }
+}
+
+@keyframes cloud_move_animation {
+  100%{
+    right: var(--frame_width)
   }
 }
