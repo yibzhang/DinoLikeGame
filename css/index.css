@@ -19,6 +19,7 @@
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 .start:hover{
   background-color: gray;
@@ -66,6 +67,9 @@
   width: var(--cloud_width);
   position: absolute;
   float: right;
+  top: 0;
+  right: 30%;
+  background-image: url("../images/cloud.png");
   background-size: contain;
 }
 
@@ -74,8 +78,14 @@
   animation-iteration-count: infinite;
 }
 
-#cloud1{
-  top: 35%;
-  right: 30%;
-  background-image: url("../images/cloud1.png");
+.mountains{
+  height: calc(var(--frame_height)/2);
+  width: var(--frame_width);
+  position: absolute;
+  top: 5%;
+  background-image: url("../images/mountains.png");
+  background-position: left;
+  background-repeat: repeat-x;
+  background-size: contain;
+  z-index: -2;
 }

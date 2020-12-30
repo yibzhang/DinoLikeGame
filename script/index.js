@@ -3,7 +3,7 @@ var frame = document.getElementById("frame");
 var player = document.getElementById("player");
 var enermy = document.getElementById("enermy");
 var score_display = document.getElementById("score")
-var cloud1 = document.getElementById("cloud1")
+var cloud = document.getElementById("cloud")
 var game_update_rate = 100;
 var score = 0;
 
@@ -62,13 +62,13 @@ function enermy_reset() {
 }
 
 function background_move() {
-  cloud1.style.right = -cloud1.clientWidth + "px"
-  cloud1.classList.add('cloud_move')
+  cloud.style.right = -cloud.clientWidth + "px"
+  cloud.classList.add('cloud_move')
 }
 
 function background_stop() {
-  cloud1.style.right = getComputedStyle(cloud1).right;
-  cloud1.classList.remove('cloud_move')
+  cloud.style.right = getComputedStyle(cloud).right;
+  cloud.classList.remove('cloud_move')
 }
 
 function add_score() {

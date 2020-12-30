@@ -8,7 +8,7 @@
     --enermy_height: 80px;
     --enermy_width: 40px;
     --enermy_move_time: 3s;
-    --cloud_height: 100px;
-    --cloud_width: 100px;
+    --cloud_height: 200px;
+    --cloud_width: 200px;
     --cloud_move_time: 5s;
   }
