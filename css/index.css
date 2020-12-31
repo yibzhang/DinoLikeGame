@@ -18,6 +18,8 @@
   position: absolute;
   top: 50px;
   left: 50%;
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 200%;
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -27,6 +29,8 @@
 }
 
 .score{
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 150%;
   position: absolute;
   top: 0px;
   left: 10px;
