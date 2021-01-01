@@ -2,10 +2,10 @@
 
 @keyframes enermy_move_animation {
   0% {
-    right: 0px;
+    right: 0%;
   }
   100% {
-    right: var(--frame_width);
+    right: 100%;
   }
 }
 
@@ -32,6 +32,12 @@
 
 @keyframes cloud_move_animation {
   100%{
-    right: var(--frame_width)
+    right: 100%;
+  }
+}
+
+@keyframes mountains_move_animation {
+  100%{
+    left: -71%;
   }
 }

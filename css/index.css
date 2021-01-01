@@ -16,21 +16,25 @@
 
 .start {
   position: absolute;
-  top: 50px;
+  top: 40%;
   left: 50%;
+  padding: 2px 2px 2px 2px;
   font-family: 'Ma Shan Zheng', cursive;
   font-size: 200%;
   transform: translateX(-50%);
   z-index: 1;
 }
 .start:hover{
-  background-color: gray;
+  border-width: 6px;
+  border-style: double;
+  border-color: black;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 .score{
   font-family: 'Ma Shan Zheng', cursive;
-  font-size: 150%;
+  font-size: 175%;
   position: absolute;
   top: 0px;
   left: 10px;
@@ -71,10 +75,11 @@
   width: var(--cloud_width);
   position: absolute;
   float: right;
-  top: 0;
+  top: 10%;
   right: 30%;
   background-image: url("../images/cloud.png");
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .cloud_move{
@@ -84,12 +89,18 @@
 
 .mountains{
   height: calc(var(--frame_height)/2);
-  width: var(--frame_width);
+  width: calc(var(--frame_width)*2);
   position: absolute;
+  left: 0%;
   top: 5%;
   background-image: url("../images/mountains.png");
   background-position: left;
   background-repeat: repeat-x;
   background-size: contain;
   z-index: -2;
+}
+
+.mountains_move{
+  animation: mountains_move_animation var(--mountains_move_time) linear;
+  animation-iteration-count: infinite;
 }

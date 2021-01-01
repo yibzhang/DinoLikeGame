@@ -9,6 +9,7 @@
     --enermy_width: 40px;
     --enermy_move_time: 3s;
     --cloud_height: 200px;
-    --cloud_width: 200px;
+    --cloud_width: 500px;
     --cloud_move_time: 5s;
+    --mountains_move_time: 60s;
   }
