@@ -12,4 +12,5 @@
     --cloud_width: 500px;
     --cloud_move_time: 5s;
     --mountains_move_time: 60s;
+    --grass_move_time: 6s;
   }

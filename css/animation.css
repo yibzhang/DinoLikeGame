@@ -36,8 +36,15 @@
   }
 }
 
+@keyframes grass_move_animation {
+  100%{
+    right: 100%;
+  }
+}
+
 @keyframes mountains_move_animation {
   100%{
     left: -71%;
   }
 }
+

@@ -6,6 +6,7 @@ var enermy = document.getElementById("enermy");
 var score_display = document.getElementById("score")
 var cloud = document.getElementById("cloud")
 var mountains = document.getElementById("mountains")
+var grass = document.getElementById("grass")
 
 var game_update_rate = 100;
 var score = 0;
@@ -67,13 +68,17 @@ function enermy_reset() {
 function background_move() {
   cloud.style.right = -cloud.clientWidth + "px"
   cloud.classList.add('cloud_move')
-  mountains.style.left = "0%";
+  grass.style.right = -grass.clientWidth + "px"
+  grass.classList.add('grass_move')
+  mountains.style.left = "0";
   mountains.classList.add('mountains_move')
 }
 
 function background_stop() {
   cloud.style.right = getComputedStyle(cloud).right;
   cloud.classList.remove('cloud_move')
+  grass.style.right = getComputedStyle(grass).right;
+  grass.classList.remove('grass_move')
   mountains.style.left = getComputedStyle(mountains).left;
   mountains.classList.remove('mountains_move')
 }

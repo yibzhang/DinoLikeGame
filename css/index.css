@@ -104,3 +104,21 @@
   animation: mountains_move_animation var(--mountains_move_time) linear;
   animation-iteration-count: infinite;
 }
+
+.grass{
+  height: calc(var(--frame_height)/10);
+  width: var(--frame_width);
+  position: absolute;
+  float: right;
+  top: 70%;
+  right: 0%;
+  background-image: url("../images/grass.png");
+  background-position: left;
+  background-repeat: repeat-x;
+  background-size: contain;
+}
+
+.grass_move{
+  animation: grass_move_animation var(--grass_move_time) linear;
+  animation-iteration-count: infinite;
+}
