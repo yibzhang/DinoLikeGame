@@ -62,8 +62,11 @@
 }
 
 .enermy_move {
-  animation: enermy_move_animation var(--enermy_move_time) linear;
-  animation-iteration-count: infinite;
+  /* animation: enermy_move_animation var(--enermy_move_time) linear; */
+  animation-name: enermy_move_animation;
+  animation-timing-function: linear;
+  /* animation-duration: var(--enermy_move_time); */
+  /* animation-iteration-count: infinite; */
 }
 
 .player_jump {
